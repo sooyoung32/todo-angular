@@ -25,7 +25,6 @@ public class TodoService {
 	
 	public int modifyTodo(Todo todo){
 		todo.setDate(new Date());
-		System.err.println("todo¼­ºñ½º "+todo);
 		return todoMapper.updateTodo(todo);
 	}
 	

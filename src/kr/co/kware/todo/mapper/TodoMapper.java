@@ -4,15 +4,21 @@ import java.util.List;
 
 import kr.co.kware.todo.vo.Todo;
 
-public interface TodoMapper  {
-	
-	public int insertTodo(Todo todo);
-	public int updateTodo(Todo todo);
-	public int updateHasDone(Todo todo);
-	public int deleteTodo(int todoId);
-	public List<Todo> selectTodoList(); 
-	public Todo selectTodoItem(int todoId);
-	public int countHasNotBeenDone();
-	
-	
+public interface TodoMapper {
+
+    int insertTodo(Todo todo);
+
+    int updateTodo(Todo todo);
+
+    int updateHasDone(Todo todo);
+
+    int deleteTodo(int todoId);
+
+    List<Todo> selectTodoList();
+
+    Todo selectTodoItem(int todoId);
+
+    int countHasNotBeenDone();
+
+
 }

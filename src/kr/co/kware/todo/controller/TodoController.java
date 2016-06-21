@@ -37,7 +37,6 @@ public class TodoController {
 		Todo todo = todoService.readTodo(todoId);
 		todo.setContent(content);
 		todoService.modifyTodo(todo);
-		System.err.println("컨트롤러 : "+todo);
 		List<Todo> result = todoService.showTodoList();
 		return result;
 	}
@@ -59,7 +58,6 @@ public class TodoController {
 	@RequestMapping(value ="/todos/{todoId}", method=RequestMethod.DELETE)
 	public	@ResponseBody List<Todo> deleteTodo(@PathVariable int todoId){
 		
-		System.err.println(todoId);
 		todoService.deleteTodo(todoId);
 		List<Todo> result = todoService.showTodoList();
 		
@@ -94,7 +92,6 @@ public class TodoController {
 	public @ResponseBody int countHasNotBeenDone(){
 		
 		int remaining = todoService.countHasNotBeenDone();
-		System.err.println("remaining = "+remaining);
 		return remaining;
 	}
 	
@@ -102,7 +99,6 @@ public class TodoController {
 	public  @ResponseBody List<Todo> archiveAllTodos(@PathVariable int[] todoIds){
 		for(int i= 0 ; i < todoIds.length; i++){
 			todoService.deleteTodo(todoIds[i]);
-			System.err.println(todoIds[i]);
 		}
 		List<Todo> todoList = todoService.showTodoList();
 		return todoList;
